@@ -25,4 +25,25 @@ This project is a **original** Discord bot that is also a game.
 - Save
 
 # Setup
-TOBEDONE
+You're going to need a running kubernetes cluster, if you dont have one execute ./l8ks up.
+
+In case you don't have helm installed: 
+https://helm.sh/docs/intro/install/
+```
+git clone https://github.com/jumbo-dog/Tebu.git
+cd Tebu/
+helm install operations -f ../kubernetes-secrets/myvalues.yaml ./charts/bot-service-chart/
+```
+
+
+Secrets yaml format
+```
+botServiceSettings:
+  botToken: ""
+  appId: ""
+  databasePassword: ""
+  databaseLogin: ""
+image:
+  tag: latest 
+```
+
